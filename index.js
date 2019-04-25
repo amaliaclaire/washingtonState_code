@@ -33,6 +33,7 @@ let namesOfStates = require('./usaStates.js')
 // .push element into a variable or hold it somewhere.
 // look at libraries that give you close matches
 //https://stackoverflow.com/questions/10018679/python-find-closest-string-from-a-list-to-another-string#10018734
+//  INCLUDES https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript --
 
 
 let washingtonArray = namesOfStates.map(a => a.location)
@@ -42,26 +43,22 @@ let element = ''
 
 
   let test = ((array) => {
-    let result
+    let result = ''
     let newArray = []
-
 
       for (let i = 0; i < array.length; i++) {
         if(array[i] != 'WA' ) {
-          console.log(array[i]);
+          newArray.push(array[i])
+           newArray 
 
-          
           // array[i] is the rest of the strings other than "WA" and you are assigning them all to become "WA"
-            // console.log(newArray.push(array[i]))
-
-             // newArray
-
             // have all the values be overrided and return 'WA'
         }
-         newArray
+        // console.log('result', result);
+        result
       }
-
   })
+
 
   test(washingtonArray)
 
