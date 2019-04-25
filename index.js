@@ -52,6 +52,7 @@ let namesOfStates = require('./usaStates.js')
 
 
 // object that has values of an array of strings, and keys are the shorthand name
+// REGEX gives the flexibliity with spaces and . or WA. state so it gives the ability to handle the extra crap. 
 
 let stateNames = {};
 stateNames["WASHINGTON"] = "WA";
