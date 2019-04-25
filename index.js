@@ -53,13 +53,12 @@ let namesOfStates = require('./usaStates.js')
 
 // object that has values of an array of strings, and keys are the shorthand name
 
-let waCheck =
-  {
-    'WA': [
+let stateNames = {};
+stateNames["WASHINGTON"] = "WA";
+stateNames["WA "] = "WA";
+stateNames["/OREGON/g"] = "OR";
 
 
-    ]
-  }
 
 // console.log(waCheck);
 // attempt #2
@@ -72,29 +71,36 @@ let waCheck =
 // loop over that array and look for two cases WA or 'WASHINGTON'
 // Extract the exact WA split it at ' ' and we take that out and then we can do the comparsion
 
-
-
-
-let washingtonArray = namesOfStates.map(a => a.location)
-// console.log(washingtonArray);
-
-let waTest = ((array) => {
-  // console.log('array', array);
-  for (let i = 0; i < array.length; i++) {
-    let element = array[i].toUpperCase()
-    let str1 = "WA"
-    let str2 = "WASHINGTON"
+// nest the loop and keep track of the WA
 
 
 
 
+function normalizeStateNames(sourceData, stateNames, label="location") {
+  sourceData.forEach(item => {
+    // console.log("Item :", item);
+    let currentName = item[label].toUpperCase();
+    console.log("CurrentName :", currentName);
+    Object.keys(stateNames).forEach(e => {
+      let normalizedName = stateNames[e];
+      let nameMatch = new RegExp(e);
+      if (nameMatch.test(currentName)) {
+
+        console.log("Yaya");
+        item[label] = normalizedName;
+      }
+      // console.log('nameMatch', nameMatch);
+      // console.log('currentName', currentName);
+    });
+
+  })
+}
 
 
-  }
 
-})
 
-waTest(washingtonArray)
+normalizeStateNames(namesOfStates, stateNames)
+console.log("DONE: ", namesOfStates);
 
 
 
