@@ -56,7 +56,7 @@ let namesOfStates = require('./usaStates.js')
 let stateNames = {};
 stateNames["WASHINGTON"] = "WA";
 stateNames["WA "] = "WA";
-stateNames["/OREGON/g"] = "OR";
+stateNames["OREGON"] = "OR";
 
 
 
@@ -83,9 +83,7 @@ function normalizeStateNames(sourceData, stateNames, label="location") {
     console.log("CurrentName :", currentName);
     Object.keys(stateNames).forEach(e => {
       let normalizedName = stateNames[e];
-      let nameMatch = new RegExp(e);
-      if (nameMatch.test(currentName)) {
-
+      if (currentName.includes(e)) {
         console.log("Yaya");
         item[label] = normalizedName;
       }
