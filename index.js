@@ -36,47 +36,69 @@ let namesOfStates = require('./usaStates.js')
 //  INCLUDES https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript --
 
 
+
+
+// [
+//   {
+//     "WA": [
+//       "state of washington",
+//       "WA STATE",
+//       "washington",
+//
+//     ]
+//   }
+// ]
+
+
+
+// object that has values of an array of strings, and keys are the shorthand name
+
+let waCheck =
+  {
+    'WA': [
+
+
+    ]
+  }
+
+// console.log(waCheck);
+// attempt #2
+// forEach label look at them & go through the object of array strings's.. have the data structure be looked at the case
+// pick a case, create the datastructure and make sure they are all uppercase.
+// WHATEVER THE ARRAY[I] TURN TO UPPER AND LOOK THROUGH THE ARRAY DATABASE
+//output: result = [] (array[i]) and if it matches i have to correct it to WA (turn it into that)
+// have objects of array of strings to look like this and then .uppercase all of it
+// only look for WA or Washington  if it matches output WA
+// loop over that array and look for two cases WA or 'WASHINGTON'
+// Extract the exact WA split it at ' ' and we take that out and then we can do the comparsion
+
+
+
+
 let washingtonArray = namesOfStates.map(a => a.location)
-let element = ''
+// console.log(washingtonArray);
+
+let waTest = ((array) => {
+  // console.log('array', array);
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i].toUpperCase()
+    let str1 = "WA"
+    let str2 = "WASHINGTON"
 
 
 
 
-  let test = ((array) => {
-    let result = ''
-    let newArray = []
-
-      for (let i = 0; i < array.length; i++) {
-        if(array[i] != 'WA' ) {
-          newArray.push(array[i])
-           newArray 
-
-          // array[i] is the rest of the strings other than "WA" and you are assigning them all to become "WA"
-            // have all the values be overrided and return 'WA'
-        }
-        // console.log('result', result);
-        result
-      }
-  })
 
 
-  test(washingtonArray)
+  }
 
+})
 
-  // for loop [i]
-  // if it is NOT "WA" then proceed below. If it is WA then just return the string.
-  // iterate over each one and see if they are already "assigned" by the "WA" substring of the full state name
-  // have the end result be all WA
+waTest(washingtonArray)
 
 
 
-
-  //  washingtonArray.forEach((e) => {
-  //    element = e
-  //    console.log('element', element);
-  //
-  //    return element
-  // })
+// console.log(washingtonArray);
 
 
 
@@ -93,6 +115,54 @@ let element = ''
 
 
 
+
+
+// ATTEMPT 1
+// let element = ''
+//
+// // console.log('washingtonArray', washingtonArray);
+//
+//
+//   let test = ((array) => {
+//     let result = ''
+//     let newArray = []
+//
+//       for (let i = 0; i < array.length; i++) {
+//         // use the .includes method here and if it does not have WA then push to a string or array. Then parse through each element and change to WA.
+//         if(array[i] != 'WA' ) {
+//           console.log(newArray);
+//           newArray.push(array[i])
+//           result = newArray
+//
+//           // array[i] is the rest of the strings other than "WA" and you are assigning them all to become "WA"
+//             // have all the values be overrided and return 'WA'
+//
+//
+//         }
+//         // console.log('result', result.push(newArray));
+//         // console.log(newArray);
+//         // return result
+//       }
+//   })
+//
+//
+//   test(washingtonArray)
+
+
+// for loop [i]
+// if it is NOT "WA" then proceed below. If it is WA then just return the string.
+// iterate over each one and see if they are already "assigned" by the "WA" substring of the full state name
+// have the end result be all WA
+
+
+
+
+//  washingtonArray.forEach((e) => {
+//    element = e
+//    console.log('element', element);
+//
+//    return element
+// })
 
 
 
